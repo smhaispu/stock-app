@@ -14,6 +14,7 @@ function initWebsocket() {
         var throttledEmitter = _.throttle(emitter, throttleVal);
         ws.onopen = () => {
             console.log('opening...')
+            store.dispatch({ type: 'SET_LOADING', payload: true });
             ws.send('hello server')
         }
         ws.onerror = (error) => {
@@ -31,7 +32,7 @@ function initWebsocket() {
         }
 
         ws.onmessage = (e) => {
-            let msg = null
+            let msg = null;
             try {
                 msg = JSON.parse(e.data)
             } catch (e) {
@@ -65,6 +66,7 @@ function initWebsocket() {
                     if (sell.length) {
                         emitter({ type: 'ADD_TO_SELL', payload: sell })
                     }
+                    store.dispatch({ type: 'SET_LOADING', payload: false });
                 }
 
 

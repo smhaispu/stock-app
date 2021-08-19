@@ -6,7 +6,8 @@ import {IRootState} from './Table.model'
 const INITIAL_STATE:IRootState = {
     buy: [],
     sell: [],
-    throttle: false
+    throttle: false,
+    isLoading:true
 };
 
 const reducer = (state = INITIAL_STATE, action:tTableActions) => {
@@ -35,6 +36,12 @@ const reducer = (state = INITIAL_STATE, action:tTableActions) => {
              ...state,
              throttle :action.payload
            }
+
+        case 'SET_LOADING':
+          return {
+            ...state,
+            isLoading:action.payload
+          }
 
          default: return state;
 

@@ -19,9 +19,14 @@ interface IFetchData {
     readonly type: 'FETCH_DATA'
 }
 
+interface ISetLoader {
+    readonly type: 'SET_LOADING'
+    payload: boolean
+}
 
 export type tTableActions =
     | IADD_BOOK
     | IREMOVE_BOOK
     | IFetchData
     | ADD_THROTTLE
+    | ISetLoader
