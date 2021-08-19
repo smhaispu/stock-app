@@ -1,0 +1,88 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+        .table{
+            width: 100%;
+           
+            box-shadow: 0px 0px 3px #000;
+            background-color:#1b262d;
+            color:#fff;
+            .table-header{
+                display:flex;
+                justify-content:space-between;
+                padding:15px 0;
+                margin:0 25px;
+                font-size: 14px;
+                font-weight: 500;
+                box-sizing: border-box;
+                color:grey;
+               
+
+            }
+            .table-body{
+                display:flex;
+                flex-direction:column;
+                max-height: 450px;
+                overflow: scroll;
+                .row{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .row-cell{
+                        height: 35px;
+                        width: 100px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        @media (max-width:600px){
+            .buy-containter{
+                width:100%;
+                margin: 15px;
+                max-height:300px;
+                overflow:hidden;
+           }
+           
+           .sell-containter{
+                width:100%;
+                margin: 15px;
+                max-height:300px;
+                overflow:hidden;
+           }
+        }
+
+
+        
+    
+}
+
+.buy-containter{
+     width:45%;
+     padding: 15px;
+     margin: 15px;
+     max-height:500px;
+     overflow:scroll;
+     .box-header-buy{
+        background-color: lightgreen;
+        color:white;
+        padding: 10px;
+     }
+}
+
+.sell-containter{
+     width:45%;
+     padding: 15px;
+     margin: 15px;
+     max-height:500px;
+     overflow:scroll;
+     .box-header-sell{
+        background-color: lightcoral;
+        color:white;
+        padding: 10px;
+    }
+}
